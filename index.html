@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel de Senhas</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="painel">
+    <h1>Painel de Senhas</h1>
+    <div class="senha-atual" id="senhaAtual">Senha: A000</div>
+    <div class="botoes">
+      <button onclick="gerarSenha()">Chamar Próxima</button>
+      <button onclick="resetar()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    let letraAtual = 'A';
+    let numeroSenha = 0;
+
+    function gerarSenha() {
+      numeroSenha++;
+
+      if (numeroSenha > 999) {
+        numeroSenha = 0;
+        letraAtual = proximaLetra(letraAtual);
+      }
+
+      const senhaFormatada = letraAtual + numeroSenha.toString().padStart(3, '0');
+      document.getElementById("senhaAtual").innerText = "Senha: " + senhaFormatada;
+    }
+
+    function proximaLetra(letra) {
+      if (letra === 'Z') return 'A';
+      return String.fromCharCode(letra.charCodeAt(0) + 1);
+    }
+
+    function resetar() {
+      letraAtual = 'A';
+      numeroSenha = 0;
+      document.getElementById("senhaAtual").innerText = "Senha: A000";
+    }
+  </script>
+</body>
+</html>

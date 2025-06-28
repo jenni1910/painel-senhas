@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.painel {
+  background-color: #ffffff;
+  padding: 30px 50px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.painel h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.senha-atual {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #0066cc;
+}
+
+.botoes button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botoes button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.botoes button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+.botoes button:hover {
+  opacity: 0.9;
+}
